@@ -12,7 +12,7 @@ const App = () => {
   });
   const urlApi = "https://assets.breatheco.de/apis/fake/todos/user/jorge";
 
-  const getTasks = (url) => {
+  const getTasks = (urlApi) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -22,12 +22,12 @@ const App = () => {
       redirect: "follow",
     };
 
-    fetch(url, requestOptions)
+    fetch(urlApi, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
         if (result.msg) {
-          postTask(url);
+          postTask(urlApi);
         } else {
           setState((prevState) => {
             return { ...prevState, tareasAPI: result };
@@ -37,7 +37,7 @@ const App = () => {
       .catch((error) => console.log("error", error));
   };
 
-  const postTask = (url) => {
+  const postTask = (urlApi) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -50,20 +50,20 @@ const App = () => {
       redirect: "follow",
     };
 
-    fetch(url, requestOptions)
+    fetch(urlApi, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
         if (result.msg) {
-          getTasks(url);
+          getTasks(urlApi);
         } else {
-          getTasks(url);
+          getTasks(urlApi);
         }
       })
       .catch((error) => console.log("error", error));
   };
 
-  const putTasks = (url, data) => {
+  const putTasks = (urlApi, data) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -74,7 +74,7 @@ const App = () => {
       redirect: "follow",
     };
 
-    fetch(url, requestOptions)
+    fetch(urlApi, requestOptions)
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
@@ -158,7 +158,7 @@ const App = () => {
             )}
           </ul>
           <h5>Tareas pendientes: {state.tareasAPI.length}</h5>
-          <button className="botondel" onClick={deleteAllTask}>Borre usuario y tareas</button>
+          <button className="botondel" onClick={deleteAllTask}>Borre todas las tareas</button>
         </div>
       </div>
     </div>
