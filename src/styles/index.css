@@ -1,12 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0);
+}
 
-/* 
+.post-it {
+  text-decoration: none;
+  background: rgb(255, 255, 255);
+  height: 100%;
+  width: 100%;
+  margin: 30px auto;
+  box-shadow: 0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+input {
+  background-color: transparent;
+  width: 100%;
+  height: 40px;
+  border: 2px solid rgb(87, 87, 73);
+  padding: 0;
+  outline: none;
+}
+ul {
+  margin-top: 10px;
+}
+li,
+span {
+  font-size: 25px;
+  margin-bottom: 5px;
+  padding: 5px 0px;
+}
+.fa,
+.fas {
+  float: right;
+  margin-right: 15px;
+  color: rgb(87, 87, 73);
+}
+.fa:hover,
+.fas:hover {
+  color: black;
+}
 
-*/
+h5 {
+  position: absolute;
+  bottom: 0px;
+  margin-left: 15px;
+  margin-bottom: 0px;
+}
+.tdl {
+  text-align: center;
+color: blue;
+}
+.botondel {
+    color: rgb(49, 49, 49);
+}
